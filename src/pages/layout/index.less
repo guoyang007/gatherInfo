@@ -1,0 +1,21 @@
+html,body,#root{
+	height: 100%;
+}
+.app-container{
+	display: flex;
+	height:100%;
+	.left-panel{
+		width: 200px;
+		flex-shrink:0;
+		background-color: #ccc;
+	}
+	.content-container{
+		flex-grow:1;
+		overflow: scroll;
+		background-color:#263238;
+		.grid-article:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+
