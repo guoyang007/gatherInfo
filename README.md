@@ -31,4 +31,10 @@ The code should be added near the top of the `<head>` tag and before any other s
 </script>
 ```
 
+### TODO
+
+* model 格式确定。以能存储到 db
+* 信息收集脚本中，想要收集的信息{click事件，以及？}
+
+
 

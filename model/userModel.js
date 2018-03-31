@@ -3,6 +3,7 @@ const { Schema } = mongoose;
 
 const UserSchema = new Schema({
   id:String,
+  basic: Schema.Types.Mixed,
   eventType:String,
 	content:String,
   stay: String,

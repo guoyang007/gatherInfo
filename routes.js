@@ -9,7 +9,11 @@ router.get('/',async (ctx,next)=>{
 router.get('/_ga.png', async (ctx,next)=>{
 	const params = ctx.query;
 	dbFn.add(params);	
-})
+  ctx.set('Cache-Control', 'no-cache');
+  ctx.type = 'image/png';
+  ctx.body = ''
+  await next()
+}) 
 
 // router.get('/api/articles/:id',async(ctx,next)=>{
 // 	const {id}=ctx.params;
