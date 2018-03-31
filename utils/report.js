@@ -24,6 +24,7 @@ function report(url,data){
     image.onerror = null
     delete entry[name]
   }
-  image.src = `${url}${url.indexOf('?')<0?'?':'&'}${items.join('&')}`
+  image.src = `${url}/_ga.png${url.indexOf('?')<0?'?':'&'}${items.join('&')}`
 }
 
+export default report;

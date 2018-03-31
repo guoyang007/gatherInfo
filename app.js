@@ -8,6 +8,7 @@ const historyFallback = require('koa2-history-api-fallback')
 const router = require('./routes.js');
 const path = require('path');
 const app = module.exports = new koa();
+import createEmptyImage from './utils/createEmptyImage.js';
 
 // router to front-end
 app.use(historyFallback())
@@ -38,10 +39,12 @@ app.use(serve(path.join(__dirname, 'public'),{
 app.use(router.routes());
 app.use(router.allowedMethods());
 
+createEmptyImage()
 
 if (!module.parent) {
-    app.listen(3000);
-    console.log('listening on port 3000');
+    let port = process.env.PORT || 3003;
+    app.listen(port);
+    console.log(`listening on port: ${port}`);
 }
 
 
