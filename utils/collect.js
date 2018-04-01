@@ -38,7 +38,18 @@ function collect(){
   }
 
   // TODO: add eventListner to document to track the interactions
+  window.addEventListener('click',function(e){
+    
+  })
 
+  window.addEventListener('mousedown',function(e){
+
+  })
+
+  window.addEventListener('keydown',function(e){
+    
+  })
   // TODO: page view time
+  // refer to: https://blog.csdn.net/hxyascx/article/details/53374028
   
 }
