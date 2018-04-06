@@ -9,7 +9,7 @@ const router = require('./routes.js');
 const path = require('path');
 const app = module.exports = new koa();
 // import createEmptyImage from './utils/createEmptyImage.js';
-
+const shell = require('shelljs');
 // router to front-end
 app.use(historyFallback())
 // Logger
@@ -40,6 +40,8 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 // createEmptyImage()
+
+shell.cp('utils/collect.js','public/collect.js');
 
 if (!module.parent) {
     let port = process.env.PORT || 3003;

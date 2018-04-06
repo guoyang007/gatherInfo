@@ -24,12 +24,10 @@ The code should be added near the top of the `<head>` tag and before any other s
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
-    script.src = `{the url this project will be deployed}`;
+    script.src = `http://www.yguo.club:3003/collect.js`;
     const s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(script, s);
   })();
-  ga('create','UA-XXXX-Y',auto);
-  ga('send','pageview')
 </script>
 ```
 

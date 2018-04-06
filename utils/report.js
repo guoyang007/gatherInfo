@@ -1,11 +1,11 @@
 /**
- * @param  {String} url
  * @param  {Object} data
  * @return {[type]}
  */
 let entry = {};
-function report(url,data){
-  if (!url||!data) {
+function report(data){
+  const url = `http://www.yguo.club:3003`;
+  if (!data) {
     return
   }
   const image = document.createElement('img');

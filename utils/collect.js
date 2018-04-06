@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-import Report from './report.js';
+import report from './report.js';
 /**
  * @return {Object}
  */
@@ -33,13 +33,53 @@ function collect(){
       }
     }
     if (type == 'send') {
-      Report(`the url gatherinfo deployed`, params);
+      report(params);
     }
   }
 
   // TODO: add eventListner to document to track the interactions
   window.addEventListener('click',function(e){
-    
+    let target = e.target;
+    const innerDocument = window.frames["epubContentIframe"].contentWindow.document;
+    let currentUrl = innerDocument.location.href;
+    let currentTitle = innerDocument.title;
+    report({
+      verb:{
+        display:{
+          "en-GB": "experienced"
+        }
+      },
+      object:{
+        id:currentUrl,
+        definition:{
+          name:{
+            "en-GB":currentTitle
+          }
+        }
+      }
+    })
+  })
+
+  window.frames["epubContentIframe"].contentWindow.addEventListener('click',function(e){
+    let target = e.target;
+    const innerDocument = window.frames["epubContentIframe"].contentWindow.document;
+    let currentUrl = innerDocument.location.href;
+    let currentTitle = innerDocument.title;
+    report({
+      verb:{
+        display:{
+          "en-GB": "experienced"
+        }
+      },
+      object:{
+        id:currentUrl,
+        definition:{
+          name:{
+            "en-GB":currentTitle
+          }
+        }
+      }
+    })
   })
 
   window.addEventListener('mousedown',function(e){
@@ -53,3 +93,5 @@ function collect(){
   // refer to: https://blog.csdn.net/hxyascx/article/details/53374028
   
 }
+
+collect();
