@@ -3,25 +3,26 @@
  * @return {[type]}
  */
 let entry = {};
-function report(data){
-  const url = `http://www.yguo.club:3003`;
+
+function report(data) {
+  const url = `http://127.0.0.1:3003`;
   if (!data) {
     return
   }
-  const image = document.createElement('img');
-  let items=[];
-  for(let key in data){
+  let image = document.createElement('img');
+  let items = [];
+  for (let key in data) {
     if (data[key]) {
-      items.push(`${key}=${encodeURIComponent(data[key])}`)
+      items.push(`${key}=${JSON.stringify(data[key])}`)
     }
   }
   const name = `img_${new Date()}`;
-  entry[name]=image;
-  imgae.onload = image.onerror = function(){
-    entry[name]=
-    image=
-    image.onload=
-    image.onerror = null
+  entry[name] = image;
+  image.onload = image.onerror = function() {
+    entry[name] =
+      image =
+      image.onload =
+      image.onerror = null
     delete entry[name]
   }
   image.src = `${url}/_ga.png${url.indexOf('?')<0?'?':'&'}${items.join('&')}`

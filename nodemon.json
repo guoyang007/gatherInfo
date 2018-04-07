@@ -1,0 +1,5 @@
+{
+	"ignore": [
+		".git", "node_modules/**/node_modules", "public/","myjsonfile.json","myjsonfile222.json"
+	]
+}

@@ -24,12 +24,16 @@ The code should be added near the top of the `<head>` tag and before any other s
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
-    script.src = `http://www.yguo.club:3003/collect.js`;
+    script.src = `http://127.0.0.1:3003/collect.js`;
     const s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(script, s);
   })();
 </script>
 ```
+
+**NOTE:**
+
+  上段脚本中的script.src 地址需要和 `utils/report.js`中第8行url一致。目前都是在本地机器上运行。
 
 ### TODO
 

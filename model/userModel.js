@@ -52,7 +52,7 @@ const UserSchema = new Schema({
 });
 
 UserSchema.pre('save', function (next) {
-    this.verb.id = "http://adlnet.gov/expapi/verbs/"+this.get('verb.display["en-GB"]'); // considering _id is input by client
+    this.verb.id = "http://adlnet.gov/expapi/verbs/"+this.get('verb.display.en-GB'); // considering _id is input by client
     next();
 });
 

@@ -41,7 +41,7 @@ app.use(router.allowedMethods());
 
 // createEmptyImage()
 
-shell.cp('utils/collect.js','public/collect.js');
+shell.exec('webpack --config cfg/webpack.collect.babel.js')
 
 if (!module.parent) {
     let port = process.env.PORT || 3003;
