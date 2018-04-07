@@ -1,5 +1,7 @@
 ### how to use
 
+简洁版命令：`yarn deploy`。即可实现安装以及运行生产模式（pm2 管理）。如果想要dev 模式，需要`pm2 kill`关掉prd的进程。然后`yarn start`
+
 * first: `yarn install`
 * second: `yarn run build-dll`
 * third: 
@@ -8,6 +10,7 @@
 	* `production` mode: `yarn run build-assets` to build the assets, and then run `npm run serve` to run your site
 
 **note** : the `yarn run build-dll` must be executed once before `yarn run start` or `yarn run build-assets` 
+
 
 
 ### tracking user interactions
@@ -34,6 +37,13 @@ The code should be added near the top of the `<head>` tag and before any other s
 **NOTE:**
 
   上段脚本中的script.src 地址需要和 `utils/report.js`中第8行url一致。目前都是在本地机器上运行。
+
+#### 细节
+
+在utils/文件夹中的report.js 和 collect.js。
+
+* report.js 以`img.src`实现数据上报
+* collect 通过事件代理实现数据收集。
 
 ### TODO
 
